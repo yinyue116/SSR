@@ -36,9 +36,8 @@ class GoodRag:
 
     def call_llm(self, prompt):
         # Set OpenAI's API key and API base to use vLLM's API server.
-        openai_api_key = "EMPTY"
-        #openai_api_base = "http://10.200.72.202:8000/v1"
-        openai_api_base = "http://10.200.72.202:8001/v1"
+        openai_api_key = "API_KEY"
+        openai_api_base = "IP:PORT"
 
         client = OpenAI(
             api_key=openai_api_key,
@@ -46,7 +45,6 @@ class GoodRag:
         )
 
         chat_response = client.chat.completions.create(
-            #model="Qwen2-72B-Instruct",
             model="Qwen2.5-72B-Instruct-AWQ",
             messages=[
                 {"role": "system", "content": "你是一个问答助手,请根据用户的问题详细回答"},
