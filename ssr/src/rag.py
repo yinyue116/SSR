@@ -258,8 +258,8 @@ class GoodRag:
             inner_knowledge_rlt = self.create_inner_knowledge_rlt(q)
             now_item["inner_answer"] = inner_knowledge_rlt
             #add query parser
-            #search_q = self.query_parser(q)
-            search_q = q 
+            search_q = self.query_parser(q)
+            #search_q = q 
             now_item["search_q"] = search_q
             search_rlt = None
             if "local" == db_type:
